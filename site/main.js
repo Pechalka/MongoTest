@@ -1,14 +1,15 @@
 
 require.config({
     paths: {
-        "jquery": "libs/jquery-latest",
-        "knockout": "libs/knockout-min",
-        "ko.mapping" : "libs/knockout.mapping",
-        "text": "libs/text",
+        "jquery": "vendor/jquery-latest",
+        "knockout": "vendor/knockout/knockout-min",
+        "ko.mapping" : "vendor/knockout/knockout.mapping",
+        "text": "vendor/require/text",
+        "sammy" : "vendor/sammy-latest.min",
+        "bootstrap" : "vendor/bootstrap/js/bootstrap.min",
+        
         "stringTemplateEngine": "libs/stringTemplateEngine",
-        "sammy" : "libs/sammy-latest.min",
-        "bootstrap" : "bootstrap/js/bootstrap.min",
-        "render" : "core/render",
+        "render" : "libs/render",
         "Grid" : "libs/SimpleGrid"
     },
     shim: {
