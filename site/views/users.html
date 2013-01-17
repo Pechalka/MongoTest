@@ -42,20 +42,14 @@
             </tbody>
         </table>
         <div data-bind="with: grid.paging">
-            <div class="row">
-                <div class="span9">
-                    <div class="dataTables_info">
-                        Page <span data-bind="text: PageNumber" ></span> of <span data-bind="text: TotalPagesCount" ></span>
-                        </div>
-                </div>
-                <div class="span3">
-<ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
+<!-- 
+<li class="previous disabled"> -->
 
-                </div>
-            </div>
+<ul class="pager">
+              <li class="previous"><a href="javascript:void(0)" data-bind="click : back">← Previous</a></li>
+              <li>Page <lable data-bind="text: PageNumber" ></lable> of <lable data-bind="text: TotalPagesCount" ></lable></li>
+              <li class="next"><a href="javascript:void(0)" data-bind="click : next">Next →</a></li>
+            </ul>
         </div>
     </div>
 </div>
