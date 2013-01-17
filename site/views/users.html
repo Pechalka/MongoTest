@@ -10,6 +10,7 @@
                 <input type="checkbox" data-bind="checked: ShowFemale" />Show female</label>
             <select data-bind="options: Colors, value : SelectedColor, optionsValue: 'Key', optionsText: 'Value'"></select>                    
             <button style="float: right;" type="submit" class="btn btn-large" >filter</button>
+            <button style="float: right;" type="submit" class="btn btn-large" data-bind="click : $parent.add">Add</button>
         </form>
         <table class="table table-bordered" data-bind="with : grid">
             <thead >
@@ -52,4 +53,10 @@
             </ul>
         </div>
     </div>
+</div>
+
+
+<div id="popup" data-bind="with : popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<!-- ko template:{ html: html, data : data} -->
+<!-- /ko -->
 </div>
