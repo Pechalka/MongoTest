@@ -1,1 +1,61 @@
-hello <span data-bind="text : name"></span>
+<div class="row">
+    <div class="span12">
+        <form data-bind="with: filterParams, submit : filted" class="form-inline well">
+            <label>Age</label>
+            <input type="text" class="input-mini" size="3" placeholder="from" data-bind="value: AgeFrom" />
+            <input type="text" class="input-mini" size="3" placeholder="to" data-bind="value: AgeTo" />
+            <label class="checkbox ">
+                <input type="checkbox" data-bind="checked: ShowMale" />Show male</label>
+            <label class="checkbox ">
+                <input type="checkbox" data-bind="checked: ShowFemale" />Show female</label>
+            <select data-bind="options: Colors, value : SelectedColor, optionsValue: 'Key', optionsText: 'Value'"></select>                    
+            <button style="float: right;" type="submit" class="btn btn-large" >filter</button>
+        </form>
+        <table class="table table-bordered" data-bind="with : grid">
+            <thead >
+                <tr >
+                    <th class="sorting" data-bind="sort: 'FirstName', class : checkSort('FirstName')">
+                        First name
+                    </th>
+                    <th class="sorting" data-bind="sort: 'LastName', class : checkSort('LastName')">
+                        Last name
+                    </th>
+                    <th >
+                        Gender
+                    </th>
+                    <th class="sorting" data-bind="sort: 'Age', class : checkSort('Age')">
+                        Age
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: rows">
+                <tr>
+                    <td data-bind="text: FirstName">
+                    </td>
+                    <td data-bind="text: LastName">
+                    </td>
+                    <td data-bind="text: Gender">
+                    </td>
+                    <td data-bind="text: Age">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div data-bind="with: grid.paging">
+            <div class="row">
+                <div class="span9">
+                    <div class="dataTables_info">
+                        Page <span data-bind="text: PageNumber" ></span> of <span data-bind="text: TotalPagesCount" ></span>
+                        </div>
+                </div>
+                <div class="span3">
+<ul class="pager">
+  <li><a href="#">Previous</a></li>
+  <li><a href="#">Next</a></li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
