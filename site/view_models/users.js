@@ -1,9 +1,9 @@
-define(["knockout", "jquery", "Grid", "ko.mapping", "render"],
-	function(ko, $, Grid, ko_mapping, render) {
+define(["knockout", "jquery", "Grid", "ko.mapping", "ViewModelContainer"],
+	function(ko, $, Grid, ko_mapping, ViewModelContainer) {
 		return function(model){
 			var self = this;
             
-			self.popup = ko.observable(null);
+			self.popup = ViewModelContainer();
 
 var filter = {"AgeFrom":null,"AgeTo":null,"ShowMale":true,"ShowFemale":true,"Colors":[{"Key":"1","Value":"Black"},{"Key":"2","Value":"Red"},{"Key":"3","Value":"Green"}],"SelectedColor":"2"};
 			
@@ -17,7 +17,7 @@ var filter = {"AgeFrom":null,"AgeTo":null,"ShowMale":true,"ShowFemale":true,"Col
 
 
             self.add = function(){
-				render(self.popup, "add_user", {
+				self.popup.render("add_user", {
 					//categories : self.categories,
 					//dishe : { category : self.chosen_category(), price : 0, name : '', description : '' },
 					on_save : function(){

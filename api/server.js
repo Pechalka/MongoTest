@@ -25,6 +25,13 @@ app.post('/api/users', function(req, res){
     );
 });
 
+app.get('/api/menu', function(req, res){
+  res.json([
+        { text : 'Users', url :'#Users'}, 
+        { text : 'Photos', url :'#Photos'}
+      ]);
+});
+
 app.listen(8080, function(){
   console.log("Express server listening on port %d", '8080');
 });

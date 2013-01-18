@@ -9,7 +9,7 @@ require.config({
         "bootstrap" : "vendor/bootstrap/js/bootstrap.min",
         
         "stringTemplateEngine": "libs/stringTemplateEngine",
-        "render" : "libs/render",
+        "ViewModelContainer" : "libs/ViewModelContainer",
         "Grid" : "libs/SimpleGrid"
     },
     shim: {

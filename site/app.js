@@ -1,11 +1,11 @@
 define(["knockout", "jquery",
 
-	"render",
+	"ViewModelContainer",
 
     "sammy"
 
 	],function(ko, $, 
-		render,
+		ViewModelContainer,
 		Sammy
 
 		) {
@@ -13,23 +13,24 @@ define(["knockout", "jquery",
 	return Sammy(function(){
 		var app = this;
 
-		app.menu = ko.observable(null);
-		render(app.menu, "widgets/menu");
-
-		app.content = ko.observable(null);
+		app.menu = ViewModelContainer("widgets/menu", '/api/menu');
+		app.content = ViewModelContainer();
 
 
         this.get('#Users', function () {
-        	var filter = {"AgeFrom":null,"AgeTo":null,"ShowMale":true,"ShowFemale":true,"Colors":[{"Key":"1","Value":"Black"},{"Key":"2","Value":"Red"},{"Key":"3","Value":"Green"}],"SelectedColor":"2"};
-			render(app.content, "users");
+        	app.content.render("users");
 
-			app.menu().data.active('#Users');
+        	app.menu.action(function(menu){
+        		menu.active('#Users');
+        	});     	
         });
 
         this.get('#Photos', function () {
- 			app.content(null);
+ 			app.content.render('photos');
 
- 			app.menu().data.active('#Photos');
+        	app.menu.action(function(menu){
+        		menu.active('#Photos');
+        	});
         });
 
 		this.get('', function () {			

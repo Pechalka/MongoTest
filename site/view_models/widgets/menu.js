@@ -5,10 +5,7 @@ define(["knockout", "jquery"],
 
 			self.active = ko.observable("#Users");
 
-			self.items = [
-				{ text : 'Users', url :'#Users'}, 
-				{ text : 'Photos', url :'#Photos'}
-			];
+			self.items = model;
 
 		};
 	}
