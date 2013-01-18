@@ -25,4 +25,6 @@ app.post('/api/users', function(req, res){
     );
 });
 
-app.listen(3000);
+app.listen(8080, function(){
+  console.log("Express server listening on port %d", '8080');
+});

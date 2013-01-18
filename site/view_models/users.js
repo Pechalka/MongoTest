@@ -5,7 +5,9 @@ define(["knockout", "jquery", "Grid", "ko.mapping", "render"],
             
 			self.popup = ko.observable(null);
 
-            self.filterParams = ko_mapping.fromJS(model);
+var filter = {"AgeFrom":null,"AgeTo":null,"ShowMale":true,"ShowFemale":true,"Colors":[{"Key":"1","Value":"Black"},{"Key":"2","Value":"Red"},{"Key":"3","Value":"Green"}],"SelectedColor":"2"};
+			
+            self.filterParams = ko_mapping.fromJS(filter);
             self.grid = new Grid('/api/users', {"Field":"FirstName","Distinct":"asc"}, self);
 
 
